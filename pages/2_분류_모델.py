@@ -207,7 +207,7 @@ n_grid = 150
 gx = np.linspace(xr[0], xr[1], n_grid)
 gy = np.linspace(yr[0], yr[1], n_grid)
 GX, GY = np.meshgrid(gx, gy)
-grid = pd.DataFrame({f: np.full(GX.size, medians[f]) for f in feats})
+grid = pd.DataFrame({f: np.full(GX.size, medians[f]) for f in others}, index=range(GX.size))
 grid[fx] = GX.ravel()
 grid[fy] = GY.ravel()
 grid = grid[feats]
